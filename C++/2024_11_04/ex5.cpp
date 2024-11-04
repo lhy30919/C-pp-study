@@ -19,9 +19,29 @@ public:
 	bool operator ==(Power op2);
 	Power& operator +=(Power op2);
 
-	//외부 함수로 연산자 중복 정의
+	// 왼쪽 피연산자가 기본데이터 값인 경우 외부함수로 정의하고  freind
 	friend Power operator + (int op1, Power op2);
+
+	//++a 를 연산자 중복 정의하는 경우
+	Power& operator ++();
+	//a++ 를 연산자 중복 정의하는 경우(매개변수 필요)
+	Power operator ++(int x);
+	
+
 };
+//a++를 연산자 중복 정의하는 경우
+Power Power::operator++(int x) {
+	Power tmp = *this; // 바뀌기 전의 값을 가진 객체
+	this->kick++;
+	this->punch++;
+	return tmp;		//증가하기 전의 값을 가진 객체를 리턴
+}
+//++a 연산자 중복
+Power& Power::operator++() {
+	this->kick++;
+	this->punch++;
+	return *this;
+}
 // 내부함수 + 연산자 중복
 Power Power::operator+ (Power op2) {
 	Power tmp;
@@ -73,13 +93,20 @@ int main() {
 	a.show();
 	
 	cout << "\n < 오른쪽 피연산자가 상수인 경우 연산자 중복 > " << endl;
-	
 	c = a + 2;
 	c.show();
 
 	cout << "\n < 왼쪽 피연산자가 상수인 경우 연산자 중복 > " << endl;
-
 	c = 2 + a;
 	c.show();
 
+	cout << "\n < ++a 연산자 중복 >" << endl;
+	a.show();
+	c = ++a;
+	c.show();
+
+	cout << "\n < a++ 연산자 중복 >" << endl;
+	a.show();
+	c = a++;
+	c.show();
 }
