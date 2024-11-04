@@ -4,28 +4,28 @@ using namespace std;
 
 int main() {
 	string str;
-	string address("ê²½ê¸°ë„ í™”ì„±ì‹œ");
+	string address("°æ±âµµ È­¼º½Ã");
 	string phone = "010-1234-1234";
 	string copyAddress(address);
 
 	cout << address << endl;
 	cout << phone << endl;
 	cout << copyAddress << endl;
-	//c ìŠ¤íŠ¸ë§ ë°©ì‹
+	//c ½ºÆ®¸µ ¹æ½Ä
 	char text[] = { 'L','o','v','e',' ','C','+','+','\0' };
 	string title(text);
 	cout << title << endl;
 
-	cout << "ë¬¸ìì—´ ì…ë ¥" << endl;
+	cout << "¹®ÀÚ¿­ ÀÔ·Â" << endl;
 	cin >> str;
 	cout << str << endl;
 
-	cout << "\në¬¸ìì—´ì„ ìˆ«ìë¡œ ë³€í™˜ " << endl;
+	cout << "\n¹®ÀÚ¿­À» ¼ıÀÚ·Î º¯È¯ " << endl;
 	string s = "123";
 	int n = stoi(s);
-	cout << "ìˆ«ì n = " << n << endl;
+	cout << "¼ıÀÚ n = " << n << endl;
 	
-	cout << "\nstring ê°ì²´ì˜ ë™ì  ìƒì„±" << endl;
+	cout << "\nstring °´Ã¼ÀÇ µ¿Àû »ı¼º" << endl;
 	string* pStr = new string("C++");
 	cout << *pStr;
 
